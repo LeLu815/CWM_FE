@@ -1,0 +1,11 @@
+.logo_big {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  height: 25px;
+  width: 150px;
+  flex-wrap: wrap;
+}
