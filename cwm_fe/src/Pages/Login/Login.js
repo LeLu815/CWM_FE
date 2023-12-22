@@ -7,7 +7,7 @@ import { ReactComponent as Arrow_left } from "../../Svg/arrow_left.svg";
 
 const Login = () => {
   const style = {
-    margin: "1rem auto 0 auto",
+    margin: "0.5rem auto 0 auto",
   };
 
   return (
@@ -34,7 +34,7 @@ const Login = () => {
           <input className={classes.input} type="password"></input>
           <radio className={classes.radio}>
             <input className={classes.radio_checkbox} type="checkbox" />
-            <span className={classes.radio_span}>Save Password</span>
+            <span className={classes.radio_span}>Show Password</span>
           </radio>
           <div className={classes.footer}>
             <div className={classes.social_outer}>

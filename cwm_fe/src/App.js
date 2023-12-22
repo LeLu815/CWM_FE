@@ -47,7 +47,7 @@ function App() {
               <Route index element={<Search />} />
             </Route>
             <Route path="/Login" element={<Login />} />
-            <Route path="/signin" element={<SignIn />} />
+            <Route path="/Signin" element={<SignIn />} />
           </Routes>
         </BrowserRouter>
       </div>
