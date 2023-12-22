@@ -10,6 +10,7 @@ import Search from "./Pages/Search/Search";
 import Login from "./Pages/Login/Login";
 import SignIn from "./Pages/SignIn/SignIn";
 import SignSetProfile from "./Pages/SignIn/SignSetProfile";
+import SignDone from "./Pages/SignIn/SignDone";
 
 function App() {
   // 일본, 미국, 타이완(중국번체), 중국(중국간체), 태국+ 한국어
@@ -50,6 +51,7 @@ function App() {
             <Route path="/Login" element={<Login />} />
             <Route path="/Signin" element={<SignIn />} />
             <Route path="/SignProfile" element={<SignSetProfile />} />
+            <Route path="/SignDone" element={<SignDone />} />
           </Routes>
         </BrowserRouter>
       </div>
