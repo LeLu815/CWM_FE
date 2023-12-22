@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Logo from "../../components/Logo";
 
 import UserCard from "../../components/Layout/UserCard";
+import { ReactComponent as Arrow_left } from "../../Svg/arrow_left.svg";
 
 const Login = () => {
   const style = {
@@ -15,6 +16,9 @@ const Login = () => {
         <Logo />
       </div>
       <UserCard style={style}>
+        <div className={classes.arrow_left}>
+          <Arrow_left width="100%" height="100%" />
+        </div>
         <div className={classes.title}>LOG IN</div>
         <Link to="/SignIn" style={{ textDecoration: "none" }}>
           <div className={classes.move_to_signin}>Create Account</div>
@@ -32,9 +36,22 @@ const Login = () => {
             <input className={classes.radio_checkbox} type="checkbox" />
             <span className={classes.radio_span}>Save Password</span>
           </radio>
-          <div>
-            <div></div>
-            <button className={classes.button}>NEXT</button>
+          <div className={classes.footer}>
+            <div className={classes.social_outer}>
+              <div className={classes.social_info}>Log In With</div>
+              <div className={classes.social_box}>
+                <div
+                  className={`${classes.social_button} ${classes.google}`}
+                ></div>
+                <div
+                  className={`${classes.social_button} ${classes.naver}`}
+                ></div>
+                <div
+                  className={`${classes.social_button} ${classes.kakao}`}
+                ></div>
+              </div>
+            </div>
+            <button className={classes.button_next}>NEXT</button>
           </div>
         </form>
       </UserCard>
