@@ -9,7 +9,7 @@
   border-radius: 20px;
   background: #d1ff00;
   height: 40px;
-  width: 60%;
+  width: 100%;
 
   color: #000;
   text-align: center;
@@ -35,7 +35,7 @@
 
 .input_container {
   height: 40px;
-  width: 60%;
+  width: 100%;
   position: relative;
 }
 

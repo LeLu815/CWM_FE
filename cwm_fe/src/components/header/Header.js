@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import classes from "./Header.module.css";
 import Logo from "../Logo";

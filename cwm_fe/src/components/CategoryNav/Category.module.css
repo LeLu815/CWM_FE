@@ -1,0 +1,25 @@
+.category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 23%;
+  height: 3rem;
+
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  cursor: pointer;
+}
+
+.ordinary {
+  color: #9e9e9e;
+  border-bottom: 1px solid #9e9e9e;
+}
+.checked {
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+}

@@ -44,9 +44,8 @@ function App() {
       <div className={clasese.background}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Header />}>
-              <Route index element={<Home />} />
-              <Route index element={<Search />} />
+            <Route path="/" element={<Home />}>
+              <Route path="search" element={<Search />} />
             </Route>
             <Route path="/Login" element={<Login />} />
             <Route path="/Signin" element={<SignIn />} />
