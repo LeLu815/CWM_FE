@@ -1,0 +1,12 @@
+.container {
+  padding: 3rem 0 5rem 0;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: #000000;
+  border-radius: 20px;
+}

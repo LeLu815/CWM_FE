@@ -1,13 +1,16 @@
 import classes from "./CategoryNav.module.css";
 import Category from "./Category";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const CategoryNav = (props) => {
   const [categoryName, setCategoryName] = useState(null);
   const handleSettingCategory = (name) => {
     setCategoryName(name);
   };
+  useEffect(() => {
+    props.handleCategoryName(categoryName);
+  });
 
   return (
     <div className={classes.container}>

@@ -1,0 +1,26 @@
+.city_name {
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.nomal_color {
+  color: #fff;
+  cursor: default;
+}
+.glow_color {
+  color: #d1ff00;
+  cursor: pointer;
+}
+
+.btn {
+  opacity: 0;
+}
+
+.clicked {
+  color: #d1ff00;
+}

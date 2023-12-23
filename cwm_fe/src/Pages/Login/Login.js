@@ -17,7 +17,7 @@ const Login = () => {
       </div>
       <UserCard style={style}>
         <div className={classes.arrow_left}>
-          <Arrow_left width="100%" height="100%" />
+          <Arrow_left width="100%" height="100%" stroke="#ffffff" />
         </div>
         <div className={classes.title}>LOG IN</div>
         <Link to="/SignIn" style={{ textDecoration: "none" }}>
