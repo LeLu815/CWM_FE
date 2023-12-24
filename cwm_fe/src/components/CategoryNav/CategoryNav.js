@@ -4,36 +4,36 @@ import Category from "./Category";
 import { useState, useEffect } from "react";
 
 const CategoryNav = (props) => {
-  const [categoryName, setCategoryName] = useState(null);
-  const handleSettingCategory = (name) => {
-    setCategoryName(name);
+  const [categoryList, setCategoryList] = useState([]);
+  const handleSettingCategory = ({ name, action }) => {
+    switch (action) {
+      case "add":
+        setCategoryList((list) => {
+          const newList = [...list];
+          newList.push(name);
+          return newList;
+        });
+        break;
+      case "remove":
+        setCategoryList((list) => {
+          return [...list].filter((item) => name !== item);
+        });
+        break;
+    }
   };
   useEffect(() => {
-    props.handleCategoryName(categoryName);
+    props.handleCategoryName(categoryList);
   });
 
   return (
     <div className={classes.container}>
-      <Category
-        title="TOURIST SPOT"
-        categorySetting={handleSettingCategory}
-        selectedName={categoryName}
-      />
+      <Category title="TOURIST SPOT" categorySetting={handleSettingCategory} />
       <Category
         title="CAFE&RESTUARANT"
         categorySetting={handleSettingCategory}
-        selectedName={categoryName}
       />
-      <Category
-        title="HOTEL"
-        categorySetting={handleSettingCategory}
-        selectedName={categoryName}
-      />
-      <Category
-        title="COMMUNITY"
-        categorySetting={handleSettingCategory}
-        selectedName={categoryName}
-      />
+      <Category title="HOTEL" categorySetting={handleSettingCategory} />
+      <Category title="COMMUNITY" categorySetting={handleSettingCategory} />
     </div>
   );
 };

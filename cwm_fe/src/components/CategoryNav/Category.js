@@ -6,17 +6,12 @@ const Category = (props) => {
   const [isClicked, setIsClicked] = useState(false);
   const handleOnClikc = () => {
     if (isClicked) {
-      props.categorySetting(null);
+      props.categorySetting({ name: props.title, action: "remove" });
     } else {
-      props.categorySetting(props.title);
+      props.categorySetting({ name: props.title, action: "add" });
     }
     setIsClicked((boolean) => !boolean);
   };
-  useEffect(() => {
-    props.title === props.selectedName
-      ? setIsClicked(true)
-      : setIsClicked(false);
-  });
   return (
     <div
       className={`${classes.category} ${

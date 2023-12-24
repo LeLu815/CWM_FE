@@ -6,16 +6,17 @@ import Header from "../../components/header/Header";
 import SeoulMap from "../../components/SeoulMap/SeoulMap";
 
 const Home = () => {
-  const [categoryName, setCategoryName] = useState(null);
-  const handleCategoryName = (name) => {
-    setCategoryName(name);
+  const [categoryName, setCategoryName] = useState([]);
+  const handleCategoryName = (list) => {
+    setCategoryName(list);
   };
+  console.log(categoryName);
   return (
     <>
       <Header />
       <div className={classes.home_container}>
-        <CategoryNav handleCategoryName={handleCategoryName} />
         <SeoulMap />
+        <CategoryNav handleCategoryName={handleCategoryName} />
         <Outlet />
       </div>
     </>

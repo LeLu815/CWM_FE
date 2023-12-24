@@ -69,9 +69,9 @@ const SeoulMap = (props) => {
 
   return (
     <Card style={style}>
-      <div className={classes.arrow_container}>
+      {/* <div className={classes.arrow_container}>
         <Arrow_left_green width="100%" height="100%" stroke="#d1ff00" />
-      </div>
+      </div> */}
       <div className={classes.map_title_container}>
         <span className={classes.map_title}>WHERE DO YOU WANT</span>
         <span className={classes.map_title}>TO EXPLORE IN SEOUL</span>
