@@ -3,3 +3,16 @@
   max-width: 1150px;
   margin: 8rem auto 0 auto;
 }
+
+.where_do_you_want_to_go {
+  margin-top: 7rem;
+
+  color: #d1ff00;
+  text-align: center;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+}

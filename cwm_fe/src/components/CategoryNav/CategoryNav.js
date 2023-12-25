@@ -26,7 +26,7 @@ const CategoryNav = (props) => {
   });
 
   return (
-    <div className={classes.container}>
+    <div className={classes.container} style={props.style}>
       <Category title="TOURIST SPOT" categorySetting={handleSettingCategory} />
       <Category
         title="CAFE&RESTUARANT"

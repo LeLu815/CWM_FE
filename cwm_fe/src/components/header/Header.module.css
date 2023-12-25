@@ -4,6 +4,8 @@
   left: 0;
   width: 100%;
   padding: 2.5rem 0 2.5rem 0;
+  z-index: 1;
+  background-color: #191919;
 }
 
 .header_nomal {
