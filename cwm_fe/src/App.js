@@ -47,10 +47,10 @@ function App() {
             <Route path="/" element={<Home />}>
               <Route path="search" element={<Search />} />
             </Route>
-            <Route path="/Login" element={<Login />} />
-            <Route path="/Signin" element={<SignIn />} />
-            <Route path="/SignProfile" element={<SignSetProfile />} />
-            <Route path="/SignDone" element={<SignDone />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signprofile" element={<SignSetProfile />} />
+            <Route path="/signdone" element={<SignDone />} />
           </Routes>
         </BrowserRouter>
       </div>
