@@ -29,18 +29,20 @@
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  background-color: #ffffff;
+  background: rgb(91, 91, 91);
   padding-top: 0.3rem;
+  border-radius: 8px;
 }
 
 .li {
   cursor: pointer;
   padding: 0.2rem 0 0.2rem 0.8rem;
   width: 7rem;
-  color: #000000;
+  color: #ffffff;
   list-style: none;
   display: flex;
   align-items: center;
+  border-radius: 8px;
 
   font-family: Inter;
   font-size: 18px;

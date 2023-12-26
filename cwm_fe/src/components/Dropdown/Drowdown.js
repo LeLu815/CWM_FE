@@ -7,11 +7,8 @@ const Drowdown = (props) => {
         props.visibility ? classes.dropdown_true : classes.dropdown_fales
       }`}
     >
-      {props.naitonList.map((countryName) => (
-        <li
-          className={classes.li}
-          onClick={() => props.handleSelect(countryName)}
-        >
+      {props.naitonList.map((countryName, index) => (
+        <li className={classes.li} onClick={() => props.handleSelect(index)}>
           {countryName}
         </li>
       ))}

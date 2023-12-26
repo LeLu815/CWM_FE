@@ -4,6 +4,7 @@
   grid-gap: 1rem;
   margin-top: 2rem;
   max-height: 800px;
+  overflow: scroll;
 }
 
 @media screen and (max-width: 1024px) {

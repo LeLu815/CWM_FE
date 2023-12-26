@@ -75,3 +75,22 @@
   font-weight: 600;
   line-height: normal;
 }
+.header_info_login {
+  width: 22%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_info {
+  width: 16%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header_info_element {
+  cursor: pointer;
+}
+.header_info_element_naiton {
+  position: relative;
+}

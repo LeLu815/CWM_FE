@@ -5,8 +5,13 @@ const ContentLayout = (props) => {
   return (
     <>
       <div className={classes.parent_container}>
-        {props.dataList.map((data) => (
-          <ContentBox path={data.path} title={data.title} desc={data.desc} />
+        {props.dataList.map((data, index) => (
+          <ContentBox
+            path={data.path}
+            title={data.title}
+            desc={data.desc}
+            key={`index_${index}`}
+          />
         ))}
       </div>
       <div className={classes.bottom_container}></div>
