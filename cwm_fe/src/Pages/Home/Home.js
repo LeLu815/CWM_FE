@@ -1,11 +1,11 @@
-import { Outlet } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import classes from "./Home.module.css";
 import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import Header from "../../components/header/Header";
 import SeoulMap from "../../components/SeoulMap/SeoulMap";
 import ContentLayout from "../../components/Content/ContentBox/ContentLayout";
 import OneLineLayout from "../../components/Content/ContentBox/OneLineLayout";
+import { AuthContext } from "../../Context/ThemeContext";
 
 const pathList = [
   {
@@ -69,6 +69,15 @@ const pathList = [
     desc: "hello My Name is LeeIn and I'm intersted in studying web coding",
   },
 ];
+const langList = ["kor", "en", "ja", "zh", "tw", "th"];
+const homeText = {
+  kor: "당신은 어디에 가고 싶으시나요?",
+  en: "WHere do you want to go?",
+  ja: "どこに行きたいですか？",
+  zh: "你想去哪里？",
+  tw: "你想去哪里？",
+  th: "เธออยากจะไปที่ไหน?",
+};
 
 const Home = () => {
   const style = {
@@ -78,18 +87,20 @@ const Home = () => {
   const handleCategoryName = (list) => {
     setCategoryName(list);
   };
+  const { user, isLoggedIn, currLang, logout, setCurrLang } =
+    useContext(AuthContext);
+
   return (
     <>
       <Header />
       <div className={classes.home_container}>
         <SeoulMap />
         <div className={classes.where_do_you_want_to_go}>
-          WHere do you want to go?
+          {homeText[currLang]}
         </div>
         <CategoryNav handleCategoryName={handleCategoryName} style={style} />
         <ContentLayout dataList={pathList} />
         <OneLineLayout dataList={pathList.slice(0, 4)} />
-        <Outlet />
       </div>
     </>
   );
