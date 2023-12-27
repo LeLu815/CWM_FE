@@ -154,6 +154,7 @@ const Search = (props) => {
                     value={data}
                     handleIsClicked={onHandleDropDownClick}
                     selectedValue={selectedValue}
+                    handleDropdwonClick={handleDropdwonClick}
                   />
                 );
               })}

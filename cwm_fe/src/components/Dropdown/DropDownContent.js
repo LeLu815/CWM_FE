@@ -6,6 +6,7 @@ const DropDownContent = (props) => {
   const handelClick = () => {
     setIsClicked((boolean) => {
       props.handleIsClicked({ data: props.data, boolean: !boolean });
+      props.handleDropdwonClick();
       return !boolean;
     });
   };
