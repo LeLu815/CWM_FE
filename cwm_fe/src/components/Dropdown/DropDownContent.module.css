@@ -1,0 +1,27 @@
+.dropdown_content_div {
+  display: flex;
+  padding: 0.3rem;
+  gap: 0.5rem;
+}
+
+.dropdown_content_div_text {
+  color: #fff;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.radio_checkbox {
+  width: 0.7rem;
+  height: 0.7rem;
+  appearance: none;
+  border-radius: 50%;
+  border: 1px solid #999;
+}
+.radio_checkbox:checked {
+  background: #d1ff00;
+  border: none;
+}

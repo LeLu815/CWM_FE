@@ -30,6 +30,8 @@ export const AuthProvider = ({ children }) => {
     setIsLoggedIn(false);
   };
 
+  // 검색 요소들을 전체적으로 관리해서 한번에 백앤드에 넘겨줘야 한다.
+
   useEffect(() => {
     localStorage.setItem("lang", JSON.stringify(currLang));
   }, [currLang]);

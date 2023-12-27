@@ -8,7 +8,11 @@ const Drowdown = (props) => {
       }`}
     >
       {props.naitonList.map((countryName, index) => (
-        <li className={classes.li} onClick={() => props.handleSelect(index)}>
+        <li
+          key={`index_${index}`}
+          className={classes.li}
+          onClick={() => props.handleSelect(index)}
+        >
           {countryName}
         </li>
       ))}

@@ -1,0 +1,10 @@
+.selected_container {
+  border-radius: 17px;
+  background: #d1ff00;
+  position: relative;
+  display: flex;
+  padding: 0 0.6rem 0 0.6rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
