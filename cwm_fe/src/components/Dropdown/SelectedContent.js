@@ -12,7 +12,7 @@ const SelectedContent = (props) => {
 
   return (
     <div className={classes.selected_container}>
-      {currentList[index]}
+      <span className={classes.text}>{currentList[index]}</span>
       <div className={classes.x_box_size} onClick={handleCLick}>
         <X_emoji width="100%" heigth="100%" />
       </div>

@@ -4,6 +4,7 @@ import CategoryNav from "../../components/CategoryNav/CategoryNav";
 import { AuthContext } from "../../Context/ThemeContext";
 import DropDownContent from "../../components/Dropdown/DropDownContent";
 import SelectedContent from "../../components/Dropdown/SelectedContent";
+import ContentLayout from "../../components/Content/ContentBox/ContentLayout";
 
 import { useState, useContext } from "react";
 import { useLocation } from "react-router-dom";
@@ -22,12 +23,78 @@ const selectListObj = {
   th: ["การเข้าฟรี", "สัตว์เลี้ยงดูเล่น", "คนงาน", "เปิดเร็ว"],
 };
 
+const pathList = [
+  {
+    path: "패스패스",
+    title: "This is Title",
+    desc: "hello My Name is LeeIn and I'm intersted in studying web coding",
+  },
+  {
+    path: "패스패스",
+    title: "This is Title",
+    desc: "hello My Name is LeeIn and I'm intersted in studying web coding",
+  },
+  {
+    path: "패스패스",
+    title: "This is Title",
+    desc: "hello My Name is LeeIn and I'm intersted in studying web coding",
+  },
+  {
+    path: "패스패스",
+    title: "This is Title",
+    desc: "hello My Name is LeeIn and I'm intersted in studying web coding",
+  },
+  {
+    path: "패스패스",
+    title: "This is Title",
+    desc: "hello My Name is LeeIn and I'm intersted in studying web coding",
+  },
+  {
+    path: "패스패스",
+    title: "This is Title",
+    desc: "hello My Name is LeeIn and I'm intersted in studying web coding",
+  },
+  {
+    path: "패스패스",
+    title: "This is Title",
+    desc: "hello My Name is LeeIn and I'm intersted in studying web coding",
+  },
+  {
+    path: "패스패스",
+    title: "This is Title",
+    desc: "hello My Name is LeeIn and I'm intersted in studying web coding",
+  },
+  {
+    path: "패스패스",
+    title: "This is Title",
+    desc: "hello My Name is LeeIn and I'm intersted in studying web coding",
+  },
+  {
+    path: "패스패스",
+    title: "This is Title",
+    desc: "hello My Name is LeeIn and I'm intersted in studying web coding. And My Hobby is listening CCM music and just sleeping! And my Favorit Food is pizza and my best fried's name is Lee Wan",
+  },
+  {
+    path: "패스패스",
+    title: "This is Title",
+    desc: "hello My Name is LeeIn and I'm intersted in studying web coding",
+  },
+  {
+    path: "패스패스",
+    title: "This is Title",
+    desc: "hello My Name is LeeIn and I'm intersted in studying web coding",
+  },
+];
+
 const Search = (props) => {
   const location = useLocation();
   const [categoryName, setCategoryName] = useState([]);
   const [visibility, setVisibility] = useState(false);
   const { currLang } = useContext(AuthContext);
   const [selectedValue, setSelectedValue] = useState([]);
+
+  // 더보기 검색할 데이터가 있으면 생기는 useState
+  const [isMoreExist, setIsMoreExist] = useState(false);
 
   const searchTerm = location.state.searchTerm;
 
@@ -106,6 +173,8 @@ const Search = (props) => {
             })}
           </div>
         </div>
+        <ContentLayout dataList={pathList} />
+        <div>See More</div>
       </div>
     </>
   );

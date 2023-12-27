@@ -3,8 +3,24 @@
   background: #d1ff00;
   position: relative;
   display: flex;
-  padding: 0 0.6rem 0 0.6rem;
+  padding: 0.4rem 1rem 0.4rem 1rem;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+
+.x_box_size {
+  width: 13px;
+  height: 14px;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.text {
+  text-align: center;
+  margin: auto;
 }

@@ -12,6 +12,7 @@
   font-weight: 400;
   line-height: normal;
   text-transform: capitalize;
+  cursor: pointer;
 }
 
 .radio_checkbox {
@@ -20,6 +21,7 @@
   appearance: none;
   border-radius: 50%;
   border: 1px solid #999;
+  cursor: pointer;
 }
 .radio_checkbox:checked {
   background: #d1ff00;
