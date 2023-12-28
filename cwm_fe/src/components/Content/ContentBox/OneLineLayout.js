@@ -39,6 +39,7 @@ const OneLineLayout = (props) => {
             title={data.title}
             desc={data.desc}
             key={`index_${index}`}
+            id={props.id}
           />
         ))}
       </div>

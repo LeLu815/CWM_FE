@@ -1,13 +1,24 @@
 import classes from "./ContentBox.module.css";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ContentBox = (props) => {
+  const navigate = useNavigate();
   const [isLoaded, setIsLoaded] = useState(false);
   const handleImageLoad = () => {
     setIsLoaded(true);
   };
+  const handleClick = (id) => {
+    navigate({
+      pathname: `/detail/${id}`,
+    });
+  };
+
   return (
-    <div className={`${classes.box_container}`}>
+    <div
+      className={`${classes.box_container}`}
+      onClick={() => handleClick(props.id)}
+    >
       {isLoaded ? (
         <>
           <div className={classes.box_size}>

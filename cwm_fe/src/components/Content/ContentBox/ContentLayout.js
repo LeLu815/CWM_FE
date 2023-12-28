@@ -11,6 +11,7 @@ const ContentLayout = (props) => {
             title={data.title}
             desc={data.desc}
             key={`index_${index}`}
+            id={data.id}
           />
         ))}
       </div>
