@@ -124,10 +124,3 @@
   display: flex;
   gap: 1rem;
 }
-
-.x_box_size {
-  width: 13px;
-  height: 13px;
-  flex-shrink: 0;
-  cursor: pointer;
-}

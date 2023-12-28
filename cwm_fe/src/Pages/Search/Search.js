@@ -6,7 +6,7 @@ import DropDownContent from "../../components/Dropdown/DropDownContent";
 import SelectedContent from "../../components/Dropdown/SelectedContent";
 import ContentLayout from "../../components/Content/ContentBox/ContentLayout";
 
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { ReactComponent as Arrow_up } from "../../Svg/arrow_up.svg";
 import { ReactComponent as Arrow_down } from "../../Svg/arrow_down.svg";
@@ -95,8 +95,7 @@ const Search = (props) => {
 
   // 더보기 검색할 데이터가 있으면 생기는 useState
   const [isMoreExist, setIsMoreExist] = useState(false);
-
-  const searchTerm = location.state.searchTerm;
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleCategoryName = (list) => {
     setCategoryName(list);
@@ -117,6 +116,18 @@ const Search = (props) => {
     });
     // 여기서 검색 기능을 구현해야 한다.
   };
+
+  useEffect(() => {
+    if (location.state && location.state.searchTerm) {
+      setSearchTerm(location.state.searchTerm);
+    } else {
+      // 쿼리로 검색해도 검색이 가능하도록 쿼리문을 받아와야한다.
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const query = urlParams.get("q");
+      setSearchTerm(query);
+    }
+  });
 
   return (
     <>
@@ -175,7 +186,6 @@ const Search = (props) => {
           </div>
         </div>
         <ContentLayout dataList={pathList} />
-        <div>See More</div>
       </div>
     </>
   );
