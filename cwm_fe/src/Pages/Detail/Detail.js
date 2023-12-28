@@ -1,12 +1,8 @@
 import classes from "./Detail.module.css";
 import Header from "../../components/header/Header";
-import CategoryNav from "../../components/CategoryNav/CategoryNav";
-import { AuthContext } from "../../Context/ThemeContext";
 import OneLineLayout from "../../components/Content/ContentBox/OneLineLayout";
 
 import { useState, useEffect } from "react";
-
-import { ReactComponent as Arrow_left } from "../../Svg/arrow_left.svg";
 
 const pathList = [
   {

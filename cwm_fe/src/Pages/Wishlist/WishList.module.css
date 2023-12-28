@@ -1,0 +1,29 @@
+.wish_container {
+  width: 100%;
+  max-width: 1150px;
+  margin: 8rem auto 0 auto;
+
+  position: relative;
+}
+
+.fixed_box {
+  position: fixed;
+  width: 25rem;
+  height: 80vh;
+  border-radius: 20px;
+
+  background-image: linear-gradient(
+    to bottom,
+    #535353,
+    #535353,
+    #7d827b,
+    #575757,
+    #373737,
+    #232323,
+    #191919
+  );
+}
+
+.content_box {
+  padding-left: 28rem;
+}
