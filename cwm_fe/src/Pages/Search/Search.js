@@ -98,12 +98,13 @@ const pathList = [
   },
 ];
 
-const Search = (props) => {
+const Search = () => {
   const location = useLocation();
   const [categoryName, setCategoryName] = useState([]);
   const [visibility, setVisibility] = useState(false);
   const { currLang } = useContext(AuthContext);
   const [selectedValue, setSelectedValue] = useState([]);
+  const [isClicked, setIsClicked] = useState(false);
 
   // 더보기 검색할 데이터가 있으면 생기는 useState
   const [isMoreExist, setIsMoreExist] = useState(false);
@@ -129,6 +130,10 @@ const Search = (props) => {
     // 여기서 검색 기능을 구현해야 한다.
   };
 
+  const HandleCick = () => {
+    setIsClicked(true);
+  };
+
   useEffect(() => {
     if (location.state && location.state.searchTerm) {
       setSearchTerm(location.state.searchTerm);
@@ -139,14 +144,16 @@ const Search = (props) => {
       const query = urlParams.get("q");
       setSearchTerm(query);
     }
-  });
+  }, [location.state]);
 
   return (
     <>
-      <Header />
+      <Header resultClikck={isClicked} resetFunc={setIsClicked} />
       <div className={classes.search_container}>
         <CategoryNav handleCategoryName={handleCategoryName} style={style} />
-        <div className={classes.search_keyword_box}>{searchTerm}</div>
+        <div className={classes.search_keyword_box} onClick={HandleCick}>
+          {searchTerm}
+        </div>
         <div className={classes.filter_box}>
           <div className={classes.filter_dropdown_outer}>
             <div

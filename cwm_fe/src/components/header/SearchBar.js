@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import classes from "./SearchBar.module.css";
@@ -36,6 +36,14 @@ const SearchBar = (props) => {
       );
     }
   };
+  useEffect(() => {
+    if (window.location && window.location.search) {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const query = urlParams.get("q");
+      setSearchTerm(query);
+    }
+  }, []);
 
   return (
     <>

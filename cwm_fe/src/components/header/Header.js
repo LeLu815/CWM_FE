@@ -1,5 +1,5 @@
 import { Outlet, useNavigate } from "react-router-dom";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
 import classes from "./Header.module.css";
 import Logo from "../Logo";
 import SearchBar from "./SearchBar";
@@ -63,7 +63,8 @@ const textHeader = [
   },
 ];
 
-const Header = () => {
+const Header = (props) => {
+  const ref = useRef();
   const navigate = useNavigate();
   const { user, isLoggedIn, currLang, logout, setCurrLang } =
     useContext(AuthContext);
@@ -77,7 +78,12 @@ const Header = () => {
     const langList = ["kor", "en", "ja", "zh", "tw", "th"];
     setCurrLang(langList[index]);
   };
-
+  useEffect(() => {
+    if (props && props.resultClikck && props.resetFunc) {
+      handleOnclick();
+      props.resetFunc(false);
+    }
+  });
   return (
     <div className={classes.header}>
       {isSearchMode && (
@@ -91,7 +97,11 @@ const Header = () => {
       )}
       <div className={classes.header_nomal}>
         <Logo />
-        <SearchBar handleOnclick={handleOnclick} boolean={isSearchMode} />
+        <SearchBar
+          handleOnclick={handleOnclick}
+          boolean={isSearchMode}
+          ref={ref}
+        />
         {isLoggedIn ? (
           <div className={classes.header_info_login}>
             <div
