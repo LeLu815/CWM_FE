@@ -1,0 +1,25 @@
+.fake_div {
+  background-image: linear-gradient(
+    to bottom,
+    #d9d9d9,
+    #d3d3d3,
+    #b6b6b6,
+    #999999,
+    #414141
+  );
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 10px;
+
+  flex-shrink: 0;
+}
+
+.img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 10px;
+}

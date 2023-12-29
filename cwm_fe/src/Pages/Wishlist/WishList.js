@@ -2,6 +2,7 @@ import classes from "./WishList.module.css";
 import Header from "../../components/header/Header";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import ImgaeBox from "../../components/Content/Image/ImgaeBox";
 
 const pathList = [
   {
@@ -81,7 +82,9 @@ const pathList = [
 const WishList = () => {
   const [dataList, setDataList] = useState(null);
   const navigate = useNavigate();
-  const onHandleClick = (id) => {};
+  const onHandleClick = (id) => {
+    navigate(`/detail/${id}`);
+  };
 
   useEffect(() => {
     if (!dataList) {
@@ -93,11 +96,26 @@ const WishList = () => {
       <Header />
       <div className={classes.wish_container}>
         <div className={classes.fixed_box}></div>
-        <div className={classes.content_box}>
-          <div>
+        <div className={classes.box_arrangement}>
+          <div className={classes.padding_box}></div>
+          <div className={classes.content_box}>
             {dataList &&
               dataList.map((data, index) => {
-                return <div key={`index_${index}`}></div>;
+                return (
+                  <div
+                    className={classes.data_box}
+                    key={`index_${index}`}
+                    onClick={() => onHandleClick(data.id)}
+                  >
+                    <div className={classes.img_box}>
+                      <ImgaeBox path={data.path} />
+                    </div>
+                    <div className={classes.info_box}>
+                      <div className={classes.title}>{data.title}</div>
+                      <div className={classes.desc}>{data.desc}</div>
+                    </div>
+                  </div>
+                );
               })}
           </div>
         </div>
