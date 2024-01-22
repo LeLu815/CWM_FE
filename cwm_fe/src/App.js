@@ -1,4 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
 import clasese from "./App.module.css";
 import { AuthProvider } from "./Context/ThemeContext";
 
