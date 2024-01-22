@@ -81,6 +81,7 @@ const pathList = [
     desc: "hello My Name is LeeIn and I'm intersted in studying web coding",
   },
 ];
+
 const langList = ["kor", "en", "ja", "zh", "tw", "th"];
 const homeText = {
   kor: "당신은 어디에 가고 싶으시나요?",
@@ -101,6 +102,30 @@ const Home = () => {
   };
   const { user, isLoggedIn, currLang, logout, setCurrLang } =
     useContext(AuthContext);
+
+  useEffect(() => {
+    // const homeData = async () => {
+    //   try {
+    //     const response = await fetch(
+    //       "http://54.253.238.12:8000/api/areaBasedList1/main",
+    //       {
+    //         sigunguCode: 1,
+    //         contentTypeId: "",
+    //       }
+    //     );
+    //     console.log("response :", response);
+    //   } catch (error) {}
+    // };
+    // homeData();
+
+    const homeData = async () => {
+      try {
+        const response = await fetch("https://evan-moon.github.io/feed.xml");
+        console.log("response :", response);
+      } catch (error) {}
+    };
+    homeData();
+  });
 
   return (
     <>

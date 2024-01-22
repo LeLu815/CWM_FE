@@ -6,6 +6,7 @@ import { useState, useRef, useContext } from "react";
 import UserCard from "../../components/Layout/UserCard";
 import { ReactComponent as Arrow_left } from "../../Svg/arrow_left.svg";
 import { AuthContext } from "../../Context/ThemeContext";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const { login } = useContext(AuthContext);
@@ -16,6 +17,7 @@ const SignIn = () => {
 
   const [isShowPwChecked, setShowPwChecked] = useState(false);
   const passwordRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleShowPwChecked = () => {
     const password = passwordRef.current;
@@ -31,25 +33,32 @@ const SignIn = () => {
 
   const handleSignUp = async () => {
     try {
-      // 회원가입 요청을 보내고 응답을 처리합니다.
-      const response = await fetch("/api/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, password }),
-      });
+      try {
+        const response = await fetch("https://evan-moon.github.io/feed.xml");
+        console.log("response :", response);
+      } catch (error) {}
+      // // 회원가입 요청을 보내고 응답을 처리합니다.
+      // const response = await fetch("http://54.253.238.12:8000/user/users", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     "Access-Control-Allow-Origin": "*",
+      //   },
+      //   body: JSON.stringify({
+      //     name,
+      //     email,
+      //     password: `${password}`,
+      //     heart: 0,
+      //     imageUrl: "@@@",
+      //   }),
+      // });
 
-      if (response.ok) {
-        login();
-        // 회원가입 성공 처리
-        // 예: 회원가입 완료 메시지 표시 등
-      } else {
-        // 회원가입 실패 처리
-        // 예: 에러 메시지 표시 등
-      }
+      // if (response.ok) {
+      //   navigate("/login");
+      // }
     } catch (error) {
       console.error("회원가입 중 에러 발생:", error);
+      alert("SignIn Failed");
     }
   };
 
@@ -80,7 +89,7 @@ const SignIn = () => {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            maxlength="30"
+            maxLength="30"
           ></input>
           <label className={`${classes.label} ${classes.margin_add}`}>
             Email
@@ -90,7 +99,7 @@ const SignIn = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            maxlength="30"
+            maxLength="30"
           ></input>
           <label className={`${classes.label} ${classes.margin_add}`}>
             Password
@@ -101,7 +110,7 @@ const SignIn = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             ref={passwordRef}
-            maxlength="24"
+            maxLength="24"
           ></input>
           <radio className={classes.radio}>
             <input

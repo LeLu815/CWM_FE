@@ -93,9 +93,6 @@ const Login = () => {
               <div className={classes.social_info}>Log In With</div>
               <div className={classes.social_box}>
                 <div
-                  className={`${classes.social_button} ${classes.google}`}
-                ></div>
-                <div
                   className={`${classes.social_button} ${classes.naver}`}
                 ></div>
                 <div
