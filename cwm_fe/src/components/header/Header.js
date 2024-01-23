@@ -1,5 +1,7 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import { useState, useContext, useEffect, useRef } from "react";
+import { useSelector } from "react-redux";
+
 import classes from "./Header.module.css";
 import Logo from "../Logo";
 import SearchBar from "./SearchBar";
@@ -66,8 +68,10 @@ const textHeader = [
 const Header = (props) => {
   const ref = useRef();
   const navigate = useNavigate();
-  const { user, isLoggedIn, currLang, logout, setCurrLang } =
-    useContext(AuthContext);
+  // const { user, isLoggedIn, currLang, logout, setCurrLang } =
+  //   useContext(AuthContext);
+  const { user, isLoggedIn, logout, setCurrLang } = useContext(AuthContext);
+  const currLang = useSelector((state) => state.language);
 
   const [isSearchMode, setIsSearchMode] = useState(false);
   const [visibility, setVisibility] = useState(false);
